@@ -60,21 +60,38 @@ namespace Todd_O_Type_Desktop
                 
                 if (Utils.isPortValid(curPort) && curPort.BytesToRead > 0)
                 {
-                    timestamp = new DateTime();
+                    timestamp = DateTime.Now;
                     arduinoInput = curPort.ReadLine();
-                    post = timestamp + " : " + arduinoInput.Trim();
+                    post = "key=" + curSecret + "&time=" + timestamp + "&device=" + arduinoInput.Trim();
                     byteArray = Encoding.UTF8.GetBytes(post);
 
                     Console.WriteLine(post);
-                    
-                    request = WebRequest.Create(URL);
-                    request.Method = "POST";
-                    request.ContentLength = byteArray.Length;
-                    request.ContentType = "application/x-www-form-urlencoded";
+                    WebResponse response = null;
 
-                    Stream dataStream = request.GetRequestStream();
-                    dataStream.Write(byteArray, 0, byteArray.Length);
-                    dataStream.Close();
+                    try
+                    {
+                        request = WebRequest.Create(URL);
+                        request.Method = "POST";
+                        request.ContentLength = byteArray.Length;
+                        request.ContentType = "application/x-www-form-urlencoded";
+
+                        Stream dataStream = request.GetRequestStream();
+                        dataStream.Write(byteArray, 0, byteArray.Length);
+                        dataStream.Close();
+
+                        response = request.GetResponse();
+                        // Display the status.
+                        Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+                        response.Close();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Couldn't make the post");
+                    }
+                    finally
+                    {
+                       
+                    }
                 }
             }
         }
