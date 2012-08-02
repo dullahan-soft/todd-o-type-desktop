@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todd-O-Type-Desktop", "Todd-O-Type-Desktop.csproj", "{6F3ADA41-7D68-4FB0-8DF5-28769AFA981E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F3ADA41-7D68-4FB0-8DF5-28769AFA981E}.Debug|x86.ActiveCfg = Debug|x86
+		{6F3ADA41-7D68-4FB0-8DF5-28769AFA981E}.Debug|x86.Build.0 = Debug|x86
+		{6F3ADA41-7D68-4FB0-8DF5-28769AFA981E}.Release|x86.ActiveCfg = Release|x86
+		{6F3ADA41-7D68-4FB0-8DF5-28769AFA981E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
